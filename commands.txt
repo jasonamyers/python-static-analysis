@@ -1,0 +1,23 @@
+pep8 .
+pep8 --statistics -qq --count .
+pep8 --show-source --show-pep8 .
+
+pep257 .
+pep257 -e -s .
+
+pyroma .
+
+pyflakes .
+
+pylint sacredpy
+
+python -m mccabe sacred/manage.py --min 2
+
+radon cc .
+radon raw . -s
+radon mi . -s
+
+dodgy .
+bandit -r .
+
+prospector --with-tool pyroma --with-tool vulture .
